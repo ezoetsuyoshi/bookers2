@@ -1,0 +1,6 @@
+<h3>本の名前:<%= @book.title %></h3>
+
+<h3>感想:<%= @book.body %></h3>
+
+<%= link_to "編集", edit_book_path(@book.id) %>
+<%= link_to "投稿一覧に戻る", books_path %>
