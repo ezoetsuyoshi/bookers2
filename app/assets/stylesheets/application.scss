@@ -13,9 +13,47 @@
  *= require_tree .
  *= require_self
  */
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+.user{
+	text-align: center;
+}
 .midasi{
 	text-align: center;
 }
 .bun{
 	text-align: center;
 }
+.sinki{
+	text-align: center;
+}
+.header{
+	background-color: black;
+	height: 50px;
+}
+.col-lg-3{
+	list-style-type: none;
+	padding: 15px;
+	color: white;
+}
+.col-lg-2{
+	list-style-type: none;
+	padding: 15px;
+	color: white;
+}
+.booker{
+	font-size: 20px;
+	padding: 10px;
+	color: white;
+}
+a:not(.btn), a:link:not(.btn) {
+  color: #666666;
+}
+a:visited:not(.btn) {
+  color: #666666;
+}
+@import "bootstrap-sprockets";
+@import "bootstrap";
