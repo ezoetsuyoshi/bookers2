@@ -18,11 +18,29 @@
    padding: 0;
    box-sizing: border-box;
 }
+.background-top{
+	position: absolute;
+	height: 780px;
+	width: 100%;
+	background: url("talk.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.msg{
+	margin-top: 10px;
+    text-align: center;
+    background-color: #cec8c8;
+    font-size: 20px;
+}
+.gyou{
+	line-height: 200%;
+}
 .user{
 	text-align: center;
 }
 .midasi{
 	text-align: center;
+	padding-top: 25px;
 }
 .bun{
 	text-align: center;
@@ -54,6 +72,9 @@ a:not(.btn), a:link:not(.btn) {
 }
 a:visited:not(.btn) {
   color: #666666;
+}
+img{
+	width:100px;
 }
 @import "bootstrap-sprockets";
 @import "bootstrap";

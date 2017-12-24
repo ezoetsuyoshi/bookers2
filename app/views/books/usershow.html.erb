@@ -1,14 +1,16 @@
-<h3>ユーザー情報</h3><br><br>
+<h3 class="user">＜ユーザー情報＞</h3><br><br>
 
 <div class="container">
 	<div class="row">
 
 		<div class="col-lg-4">
 
-	<div><%= attachment_image_tag @user, :image, :fill, 30, 30,  class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-	</div>
-	<div>名前: <%= @user.name %></div>
-	<div>自己紹介文:<%= @user.introdaction %> </div>
+	<div><%= attachment_image_tag @user, :image, :fill, 100, 100,  class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+	</div><BR><BR><BR><BR><BR><BR>
+	<h4>＜名前＞</h4><BR>
+	<p>　<%= @user.name %></p><BR>
+	<h4>＜自己紹介文＞</h4><BR>
+	<p class="gyou"><%= @user.introdaction %></p>
 		</div>
 <div class="col-lg-8">
 <table class="table table-striped">
@@ -18,9 +20,10 @@
 	</tr>
 	<% @books.where(user_id: @user.id).each do |book| %>
 	<tr>
-		<td><%= book.title %></td>
+		<td><%= link_to book_path(book.id) do %>
+			<%= book.title %></td>
+			<% end %>
 		<td><%= book.body %></td>
-		<th><%= link_to "表示", book_path(book.id) %></th>
 	</tr>
 	
 	<% end %>

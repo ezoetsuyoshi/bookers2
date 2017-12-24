@@ -13,11 +13,11 @@
   		<div class="container">
   			<div class="row">
   		<p class="col-lg-4 booker"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers</p>
-  		<% if user_signed_in? %>
   		<ul class="col-lg-8">
   			<div class="conteiner">
   				<div class="row">
-  			<li class="col-lg-2"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <% if user_signed_in? %>
+  			<li class="col-lg-2 col-lg-offset-2"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
   				<%= link_to"ホーム", top_path %></li>
   			<li class="col-lg-2"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
   				<%= link_to "マイページ", mypage_path(current_user.id) %></li>
@@ -32,16 +32,20 @@
   				<%=link_to "トップ", top_path %></li>
   			<li class="col-lg-2"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>
   				<%=link_to "アバウト", top_path %></li>
-  			<li class="col-lg-2"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+  			<li class="col-lg-3"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
   				<%= link_to "新規登録画面へ", new_user_registration_path %></li>
-  			<li class="col-lg-2"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+  			<li class="col-lg-3"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
   				<%= link_to "ログイン", new_user_session_path %></div></li>
   				</div>
   			</div>
   		</ul>
   		<% end %>
   	</header><!-- /header -->
-  	
+  	<% if flash[:notice] %>
+    <div class="msg">
+    <%= flash[:notice] %>
+    </div>
+    <% end %>
 
     <%= yield %>
 
